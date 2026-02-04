@@ -16,71 +16,71 @@ Sensor → ESP32 → Raspberry Pi → Database → ThingSpeak → MATLAB Analysi
 ## Block Diagrams
 
 ### Overall System Architecture
-                                                                                +-------------------+
-                                                                                | Gas / Temp / |
-                                                                                | Humidity Sensor |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | ESP32 |
-                                                                                | Sensor Reading |
-                                                                                | BLE Transmission |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                  (Bluetooth / BLE)
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | Raspberry Pi |
-                                                                                | Data Processing |
-                                                                                | Threshold Check |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | InfluxDB |
-                                                                                | Time-Series DB |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | ThingSpeak |
-                                                                                | Visualization |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | MATLAB Analysis |
-                                                                                | Threshold Logic |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | Raspberry Pi |
-                                                                                | Control Command |
-                                                                                +---------+---------+
-                                                                                          |
-                                                                                          v
-                                                                                +-------------------+
-                                                                                | ESP32 |
-                                                                                | LED Actuation |
-                                                                                +-------------------+
+                                                                        +-------------------+
+                                                                          | Gas / Temp / |
+                                                                          | Humidity Sensor |
+                                                                        +---------+---------+
+                                                                                  |
+                                                                                  v
+                                                                        +-------------------+
+                                                                             | ESP32 |
+                                                                          | Sensor Reading |
+                                                                         | BLE Transmission |
+                                                                        +---------+---------+
+                                                                                  |
+                                                                            (Bluetooth / BLE)
+                                                                                  |
+                                                                                  v
+                                                                         +-------------------+
+                                                                            | Raspberry Pi |
+                                                                          | Data Processing |
+                                                                          | Threshold Check |
+                                                                         +---------+---------+
+                                                                                   |
+                                                                                   v
+                                                                         +-------------------+
+                                                                             | InfluxDB |
+                                                                           | Time-Series DB |
+                                                                         +---------+---------+
+                                                                                  |
+                                                                                  v
+                                                                         +-------------------+
+                                                                            | ThingSpeak |
+                                                                           | Visualization |
+                                                                         +---------+---------+
+                                                                                   |
+                                                                                   v
+                                                                         +-------------------+
+                                                                           | MATLAB Analysis |
+                                                                           | Threshold Logic |
+                                                                         +---------+---------+
+                                                                                   |
+                                                                                   v
+                                                                         +-------------------+
+                                                                            | Raspberry Pi |
+                                                                           | Control Command |
+                                                                         +---------+---------+
+                                                                                   |
+                                                                                   v
+                                                                         +-------------------+
+                                                                              | ESP32 |
+                                                                          | LED Actuation |
+                                                                         +-------------------+
                                         
 
 ### 🔹 Actuation Logic Block
 
-                                                                            +------------------+
-                                                                            | Gas Value Input  |
-                                                                            +--------+---------+
-                                                                                     |
-                                                                             gas > threshold ?
-                                                                               /           \
-                                                                             YES             NO
-                                                                              |               |
-                                                                      +----------------+ +----------------+
-                                                                      | RED LED ON |      | RED LED OFF |
-                                                                      +----------------+ +----------------+
+                                                                         +------------------+
+                                                                          | Gas Value Input  |
+                                                                         +--------+---------+
+                                                                                  |
+                                                                          gas > threshold ?
+                                                                            /           \
+                                                                         YES             NO
+                                                                          |               |
+                                                                 +----------------+ +----------------+
+                                                                  | RED LED ON |      | RED LED OFF |
+                                                                 +----------------+ +----------------+
 
 ---
 
