@@ -202,9 +202,9 @@ while True:
 ```
 ## Threshold Logic
 
-IF gas_value > threshold → Turn ON Red LED
-ELSE
-→ Turn OFF Red LED
+    IF gas_value > threshold → Turn ON Red LED
+    ELSE
+    → Turn OFF Red LED
 
 ## Key Features
 
