@@ -206,6 +206,20 @@ while True:
     ELSE
     → Turn OFF Red LED
 
+## Workflow Design
+
+### Complete System Workflow
+![image alt](https://github.com/KrishlayaKumar/Pollution-Monitoring-IoT-Project/blob/968bb0ba4a00a5f2786792d2d17c2f8099f7adde/Screenshot%202026-02-04%20124805.png)
+
+### Data Processing & Decision Flow
+![image alt](https://github.com/KrishlayaKumar/Pollution-Monitoring-IoT-Project/blob/8bba580d6c5f885b7534d86b52d79e0114d400fd/Screenshot%202026-02-04%20124846.png)
+
+### Website + Control Workflow
+![image alt](https://github.com/KrishlayaKumar/Pollution-Monitoring-IoT-Project/blob/2646b81f4b77af5b8d948505f4d55680078800b6/Screenshot%202026-02-04%20124923.png)
+
+### Communication Architecture
+![image alt](https://github.com/KrishlayaKumar/Pollution-Monitoring-IoT-Project/blob/edc5478cec47b431fa9d05c469378909d7c0adfd/Screenshot%202026-02-04%20124943.png)
+
 ## Key Features
 
 - Real-time pollution monitoring
